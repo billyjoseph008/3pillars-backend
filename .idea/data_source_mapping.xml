@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V1__init.sql" value="e8e72c68-27f1-4d89-8154-8611f9017e9f" />
+  </component>
+</project>
