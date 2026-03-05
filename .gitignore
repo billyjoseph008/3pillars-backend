@@ -1,0 +1,3 @@
+/.gradle
+/build
+build/classes/java/main/com/interview/threepillars/controller/RandomUserController.class
