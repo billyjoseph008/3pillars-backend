@@ -1,10 +1,8 @@
 package com.interview.threepillars.service;
 
-
 import com.interview.threepillars.model.RandomUser;
 import com.interview.threepillars.repository.RandomUserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,22 +19,30 @@ public class RandomUserService {
 
     public RandomUser getById(Long id) {
         return repository.findById(Math.toIntExact(id))
-                .orElseThrow(() -> new RuntimeException("RandomUserService not found"));
+                .orElseThrow(() -> new IllegalArgumentException("RandomUser not found: " + id));
     }
 
     public RandomUser create(RandomUser entity) {
-        RandomUser saved = repository.save(entity);
-        return saved;
+        entity.setId(null);
+        return repository.save(entity);
     }
 
     public RandomUser update(Long id, RandomUser dto) {
-        return repository.findById(Math.toIntExact(id))
-                .orElseThrow(() -> new RuntimeException("RandomUserService not found"));
+        RandomUser existing = getById(id);
+
+        existing.setFirstname(dto.getFirstname());
+        existing.setLastname(dto.getLastname());
+        existing.setAge(dto.getAge());
+        existing.setCountry(dto.getCountry());
+        existing.setAvatar(dto.getAvatar());
+
+        return repository.save(existing);
     }
 
     public void delete(Long id) {
+        if (!repository.existsById(Math.toIntExact(id))) {
+            throw new IllegalArgumentException("RandomUser not found: " + id);
+        }
         repository.deleteById(Math.toIntExact(id));
     }
-
-
 }

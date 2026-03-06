@@ -2,7 +2,6 @@ package com.interview.threepillars.controller;
 import com.interview.threepillars.model.RandomUser;
 import com.interview.threepillars.service.RandomUserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
