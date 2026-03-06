@@ -36,4 +36,6 @@ Due to time constraints the full implementation was not completed, but the repos
 ```
 
 Si quieres, también puedo darte una **versión aún mejor para entrevistas (10 líneas)** que deja clarísimo el problema y se ve más **senior/engineering style**.
+
+Plase take a look of the project and let me know if need something @ronalt64threepillarg
 ```
